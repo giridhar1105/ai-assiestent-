@@ -21,7 +21,6 @@ export default function Home() {
   const submitButtonRef = useRef(null);
   const [messages, setMessages] = useState([]);
 
-  // Responsible for updating the messages when the Server Action completes
   useEffect(() => {
     if (state.response && state.sender) {
       setMessages((messages) => [
@@ -43,7 +42,6 @@ export default function Home() {
 
     // Set the file as the value of the file input element
     if (fileRef.current) {
-      // Create a DataTransfer object to simulate a file input event
       const dataTransfer = new DataTransfer();
       dataTransfer.items.add(file);
       fileRef.current.files = dataTransfer.files;
