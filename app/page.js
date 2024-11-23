@@ -37,10 +37,9 @@ export default function Home() {
   const uploadAudio = (blob) => {
     const url = URL.createObjectURL(blob);
 
-    // Create a File object from the Blob
+    // Create a File object from the 
     const file = new File([blob], "audio.webm", { type: blob.type });
 
-    // Set the file as the value of the file input element
     if (fileRef.current) {
       const dataTransfer = new DataTransfer();
       dataTransfer.items.add(file);
