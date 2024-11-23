@@ -37,7 +37,6 @@ export default function Home() {
   const uploadAudio = (blob) => {
     const url = URL.createObjectURL(blob);
 
-    // Create a File object from the 
     const file = new File([blob], "audio.webm", { type: blob.type });
 
     if (fileRef.current) {
@@ -45,7 +44,6 @@ export default function Home() {
       dataTransfer.items.add(file);
       fileRef.current.files = dataTransfer.files;
 
-      // Submit the form
       if (submitButtonRef.current) {
         submitButtonRef.current.click();
       }
